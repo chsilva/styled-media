@@ -1,0 +1,32 @@
+{
+  "name": "@caiodev/styled-media",
+  "version": "1.0.5",
+  "description": "",
+  "main": "dist.common.js",
+  "scripts": {
+    "dev": "nodemon src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "styled",
+    "media",
+    "media query",
+    "styled media",
+    "styled media query"
+  ],
+  "author": "caio@caiodev.com",
+  "repository": "chsilva/styled-media",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "nodemon": "^2.0.4",
+    "rollup": "^2.26.11",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
