@@ -2,7 +2,11 @@ kind: pipeline
 name: build-styled-media
 
 steps:
-  - name: npm
+  - name: npm patch
+    commands:
+      - npm version patch
+
+  - name: npm publish
     image: plugins/npm
     settings:
       username: caiohenriquesilva
