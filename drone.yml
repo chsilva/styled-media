@@ -1,0 +1,16 @@
+kind: pipeline
+name: build-styled-media
+
+steps:
+  - name: npm patch
+    image: node
+    commands:
+      - npm version patch
+
+  - name: npm publish
+    image: plugins/npm
+    settings:
+      username: caiohenriquesilva
+      password:
+        from_secret: npm_password
+      email: caio@caiodev.com
