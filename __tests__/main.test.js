@@ -1,4 +1,3 @@
-/* const media = require('../src/main') */
 import media from '../src/main'
 
 test('media lessthan', () => {
