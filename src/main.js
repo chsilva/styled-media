@@ -6,31 +6,32 @@ const breakpoints = {
   huge: '1800px',
 }
 
-export default function () {
-  return {
-    lessThan: Object.keys(breakpoints).reduce((acc, label) => {
-      acc[label] = (...args) => `
+export default {
+  lessThan: Object.keys(breakpoints).reduce((acc, label) => {
+    acc[label] = (...args) =>
+      `
       @media (max-width: ${breakpoints[label]}) {
         ${args}
       }
-    `
-      return acc
-    }, {}),
-    greaterThan: Object.keys(breakpoints).reduce((acc, label) => {
-      acc[label] = (...args) => `
+    `.replace(/\s/g, '')
+    return acc
+  }, {}),
+  greaterThan: Object.keys(breakpoints).reduce((acc, label) => {
+    acc[label] = (...args) =>
+      `
       @media (min-width: ${breakpoints[label]}) {
         ${args}
       }
-    `
-      return acc
-    }, {}),
-    equalTo: Object.keys(breakpoints).reduce((acc, label) => {
-      acc[label] = (...args) => `
+    `.replace(/\s/g, '')
+    return acc
+  }, {}),
+  equalTo: Object.keys(breakpoints).reduce((acc, label) => {
+    acc[label] = (...args) =>
+      `
       @media (width: ${breakpoints[label]}) {
         ${args}
       }
-    `
-      return acc
-    }, {}),
-  }
+    `.replace(/\s/g, '')
+    return acc
+  }, {}),
 }
