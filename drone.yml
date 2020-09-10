@@ -1,0 +1,11 @@
+kind: pipeline
+name: build-styled-media
+
+steps:
+  - name: npm
+    image: plugins/npm
+    settings:
+      username: caiohenriquesilva
+      password:
+        from_secret: npm_password
+      email: caio@caiodev.com
