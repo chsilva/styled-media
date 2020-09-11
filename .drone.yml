@@ -1,15 +1,15 @@
+---
 kind: pipeline
 name: build-styled-media
-
 steps:
-  - name: npm patch
-    commands:
-      - npm version patch
-
-  - name: npm publish
-    image: plugins/npm
-    settings:
-      username: caiohenriquesilva
-      password:
+  - commands:
+      - 'npm install'
+      - 'npm version patch'
+      - 'npm adduser <<! $NPM_USERNAME $NPM_PASSWORD $NPM_EMAIL !'
+      - 'npm publish'
+    environment:
+      NPM_EMAIL: caio@caiodev.com
+      NPM_PASSWORD:
         from_secret: npm_password
-      email: caio@caiodev.com
+      NPM_USERNAME: caiohenriquesilva
+    name: npm
