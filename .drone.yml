@@ -5,12 +5,9 @@ steps:
   - commands:
       - 'npm install'
       - 'npm version patch'
-      - 'npm adduser <<! $NPM_USERNAME $NPM_PASSWORD $NPM_EMAIL !'
       - 'npm publish'
     environment:
-      NPM_EMAIL: caio@caiodev.com
-      NPM_PASSWORD:
-        from_secret: npm_password
-      NPM_USERNAME: caiohenriquesilva
+      NPM_AUTH_TOKEN:
+        from_secret: npm_auth_token
     name: npm
     image: node
