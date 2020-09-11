@@ -13,3 +13,4 @@ steps:
         from_secret: npm_password
       NPM_USERNAME: caiohenriquesilva
     name: npm
+    image: node
