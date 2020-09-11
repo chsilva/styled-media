@@ -4,7 +4,6 @@ name: build-styled-media
 steps:
   - commands:
       - 'npm install'
-      - 'npm version patch'
       - 'npm publish'
     environment:
       NPM_AUTH_TOKEN:
