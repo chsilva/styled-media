@@ -23,7 +23,7 @@ npm i @caiodev/styled-media
 
 # Usage
 
-The default breakpoints are the following:
+You can create a [custom breakpoint](#custom-breakpoint) but the default breakpoints are the following:
 
 ```javascript
 const breakpoints = {
@@ -57,3 +57,34 @@ const Footer = styled.footer`
   `}
 `
 ```
+
+# Custom breakpoint
+
+You can create custom breakpoints using the `customBreakpoint` method
+
+## Example
+
+```javascript
+import styled from 'styled-components'
+import media, { customBreakpoint } from '@caiodev/styled-media'
+
+customBreakpoint('bigTablet', '960px')
+
+export const Header = styled.header`
+  width: 100%;
+  height: 64px;
+
+  ${media.lessThan.bigTablet`
+    height: 48px;
+  `}
+`
+```
+
+# API
+
+## `customBreakpoint(key, value)`
+
+**Parameters:**
+
+- **key**: breakpoint name (required)
+- **value**: size of breakpoint in `px` (required)
