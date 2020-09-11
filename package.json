@@ -1,6 +1,6 @@
 {
   "name": "@caiodev/styled-media",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Create breakpoints within `styled components` as easily and quickly as possible 💅",
   "main": "dist.common.js",
   "scripts": {
