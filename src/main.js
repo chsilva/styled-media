@@ -1,9 +1,7 @@
 const breakpoints = {
-  small: '420px',
-  medium: '768px',
-  large: '1024px',
-  largest: '1280px',
-  huge: '1800px',
+  phone: '420px',
+  tablet: '768px',
+  desktop: '1200px',
 }
 
 export default {
@@ -20,15 +18,6 @@ export default {
     acc[label] = (...args) =>
       `
       @media (min-width: ${breakpoints[label]}) {
-        ${args}
-      }
-    `.replace(/\s/g, '')
-    return acc
-  }, {}),
-  equalTo: Object.keys(breakpoints).reduce((acc, label) => {
-    acc[label] = (...args) =>
-      `
-      @media (width: ${breakpoints[label]}) {
         ${args}
       }
     `.replace(/\s/g, '')

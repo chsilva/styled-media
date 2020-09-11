@@ -1,19 +1,18 @@
 {
   "name": "@caiodev/styled-media",
   "version": "1.0.5",
-  "description": "",
+  "description": "Create breakpoints within `styled components` as easily and quickly as possible 💅",
   "main": "dist.common.js",
   "scripts": {
     "dev": "nodemon src/main.js",
-    "test": "jest --coverage",
-    "testCoverage": "jest --coverage && coverage-shield"
+    "test": "jest --coverage"
   },
   "keywords": [
-    "styled",
+    "styled-components",
+    "react",
+    "breakpoints",
     "media",
-    "media query",
-    "styled media",
-    "styled media query"
+    "responsive"
   ],
   "author": "caio@caiodev.com",
   "repository": "chsilva/styled-media",

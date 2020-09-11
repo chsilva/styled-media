@@ -1,11 +1,10 @@
 import media from '../src/main'
 
-test('media lessthan', () => {
-  expect(media.lessThan.small`width: 100%`).toBe('@media(max-width:420px){width:100%}')
+test('media lessThan', () => {
+  const css = media.lessThan.phone`width: 100%`
+  expect(css).toMatch('@media(max-width:420px){width:100%}')
 })
-test('media greaterthan', () => {
-  expect(media.greaterThan.small`width: 100%`).toBe('@media(min-width:420px){width:100%}')
-})
-test('media equalto', () => {
-  expect(media.equalTo.small`width: 100%`).toBe('@media(width:420px){width:100%}')
+test('media greaterThan', () => {
+  const css = media.greaterThan.phone`width: 100%`
+  expect(css).toMatch('@media(min-width:420px){width:100%}')
 })
