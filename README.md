@@ -43,7 +43,7 @@ const Header = styled.header`
   width: 100%;
   height: 64px;
 
-  ${media.smallerThan.tablet`
+  ${media.lessThan.tablet`
     height: 48px;
   `}
 `
