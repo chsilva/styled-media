@@ -4,6 +4,7 @@
   "description": "Create breakpoints within `styled components` as easily and quickly as possible 💅",
   "main": "dist.common.js",
   "scripts": {
+    "build": "rollup -c",
     "dev": "nodemon src/main.js",
     "test": "jest --coverage"
   },

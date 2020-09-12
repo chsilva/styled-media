@@ -8,7 +8,7 @@ export default {
   input: 'src/main.js',
   output: [
     {
-      file: 'dist/common.js',
+      file: 'dist.common.js',
       format: 'cjs',
     },
   ],
