@@ -22,19 +22,3 @@ export default {
     common(),
   ],
 }
-
-/* import babel from 'rollup-plugin-babel'
-export default {
-  input: 'src/main.js',
-  output: {
-    file: 'dist.js',
-    format: 'iife',
-  },
-
-  plugins: [
-    babel({
-      exclude: 'node_modules/**',
-    }),
-  ],
-}
- */

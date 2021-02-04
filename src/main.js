@@ -11,7 +11,7 @@ export default {
       @media (max-width: ${breakpoints[label]}) {
         ${args}
       }
-    `.replace(/\s/g, '')
+    `
     return acc
   }, {}),
   greaterThan: Object.keys(breakpoints).reduce((acc, label) => {
@@ -20,7 +20,7 @@ export default {
       @media (min-width: ${breakpoints[label]}) {
         ${args}
       }
-    `.replace(/\s/g, '')
+    `
     return acc
   }, {}),
 }
