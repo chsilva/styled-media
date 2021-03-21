@@ -103,6 +103,6 @@ dist
 # TernJS port file
 .tern-port
 
-# Tests directory
-
 dist.common.js
+.vscode/
+example

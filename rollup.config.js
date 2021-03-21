@@ -1,24 +1,26 @@
-import json from '@rollup/plugin-json'
-import resolve from '@rollup/plugin-node-resolve'
-import common from '@rollup/plugin-commonjs'
-import babel from 'rollup-plugin-babel'
-import { terser } from 'rollup-plugin-terser'
+import typescript from 'rollup-plugin-typescript2'
+import pkg from './package.json'
 
 export default {
-  input: 'src/main.js',
+  input: 'src/index.ts',
   output: [
     {
-      file: 'dist.common.js',
+      file: pkg.main,
+      exports: 'named',
       format: 'cjs',
+      sourcemap: true
     },
+    {
+      file: pkg.module,
+      format: 'es',
+      exports: 'named',
+      sourcemap: true
+    }
   ],
   plugins: [
-    json(),
-    terser(),
-    babel({
-      exclude: 'node_modules/**',
-    }),
-    resolve(),
-    common(),
-  ],
+    typescript({
+      rollupCommonJSResolveHack: false,
+      clean: true
+    })
+  ]
 }
