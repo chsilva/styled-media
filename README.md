@@ -30,31 +30,68 @@ The default breakpoints are the following:
 const breakpoints = {
   phone: '420px',
   tablet: '768px',
-  desktop: '1200px',
+  desktop: '1200px'
 }
 ```
 
-## Example
+## Example - with default breakpoint
 
 ```javascript
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import media from '@caiodev/styled-media'
 
 const Header = styled.header`
   width: 100%;
   height: 64px;
 
-  ${media.lessThan.tablet`
-    height: 48px;
-  `}
+  ${media.lessThan(
+    'tablet',
+    css`
+      height: 48px;
+    `
+  )}
 `
 
 const Footer = styled.footer`
   width: 100%;
   height: 64px;
 
-  ${media.greaterThan.desktop`
-    height: 80px;
-  `}
+  ${media.greaterThan(
+    'desktop',
+    css`
+      height: 80px;
+    `
+  )}
+`
+```
+
+## Example - with custom breakpoints
+
+```javascript
+import styled, { css } from 'styled-components'
+import media from '@caiodev/styled-media'
+
+const Header = styled.header`
+  width: 100%;
+  height: 64px;
+
+  ${media.lessThan(
+    600,
+    css`
+      height: 48px;
+    `
+  )}
+`
+
+const Footer = styled.footer`
+  width: 100%;
+  height: 64px;
+
+  ${media.greaterThan(
+    600,
+    css`
+      height: 80px;
+    `
+  )}
 `
 ```
